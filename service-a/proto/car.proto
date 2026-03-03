@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package car;
+
+service CarService {
+  rpc CreateCar (CreateCarRequest) returns (Car);
+  rpc FindAllCars (Empty) returns (CarList);
+  rpc FindOneCar (CarId) returns (Car);
+  rpc UpdateCar (UpdateCarRequest) returns (Car);
+  rpc RemoveCar (CarId) returns (DeleteResponse);
+}
+
+message Car {
+  int32 id = 1;
+  string brand = 2;
+  string model = 3;
+  int32 year = 4;
+  float pricePerDay = 5;
+  bool isAvailable = 6;
+}
+
+message CreateCarRequest {
+  string brand = 1;
+  string model = 2;
+  int32 year = 3;
+  float pricePerDay = 4;
+}
+
+message UpdateCarRequest {
+  int32 id = 1;
+  string brand = 2;
+  string model = 3;
+  int32 year = 4;
+  float pricePerDay = 5;
+  bool isAvailable = 6;
+}
+
+message CarId {
+  int32 id = 1;
+}
+
+message CarList {
+  repeated Car cars = 1;
+}
+
+message Empty {}
+
+message DeleteResponse {
+  bool success = 1;
+}
