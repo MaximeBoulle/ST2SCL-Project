@@ -14,6 +14,18 @@ graph LR
 * Car CRUD management.
 * Data persistence with TypeORM and PostgreSQL.
 
+```mermaid
+erDiagram
+    CAR {
+        int id PK
+        string brand
+        string model
+        int year
+        float pricePerDay
+        boolean isAvailable
+    }
+```
+
 ## Development
 
 To start the service in development mode:

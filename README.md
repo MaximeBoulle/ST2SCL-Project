@@ -29,6 +29,18 @@ graph TD
 3. Service B (Car Fleet): A NestJS microservice responsible for managing car data. It communicates via gRPC and uses TypeORM with a PostgreSQL database.
 4. Database: A PostgreSQL instance for persistent data storage.
 
+```mermaid
+erDiagram
+    CAR {
+        int id PK
+        string brand
+        string model
+        int year
+        float pricePerDay
+        boolean isAvailable
+    }
+```
+
 ## Technologies Used
 
 * Backend: NestJS, gRPC, TypeORM
